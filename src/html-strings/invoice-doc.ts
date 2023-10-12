@@ -175,7 +175,7 @@ export function invoiceHtmlString(data: Task[], customer: ServiceProvider) {
             <div class="total">
                 Subtotal: $85.00 <br>
                 Tax (7%): $5.95 <br>
-                Total: € ${totalPrice.toFixed(2)}
+                Total: € ${totalPrice}
             </div>
         </div>
         <div class="footer">
