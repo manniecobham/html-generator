@@ -1,6 +1,11 @@
 import { ServiceProvider, Task } from "@taskmanagement/taskapp-model";
 import moment from "moment";
 
+
+const EURFormatter = new Intl.NumberFormat("de-DE", {
+    style: 'currency',
+    currency: "EUR",
+});
 /**
  *
  * @param data Array of Task Done
@@ -22,7 +27,8 @@ export function invoiceHtmlString(data: Task[], customer: ServiceProvider) {
               </tr>
             `;
     });
-    const totalPrice = data.reduce((acc, item) => acc + Number(item.price), 0);
+    const priceSum = data.reduce((acc, item) => acc + Number(item.price), 0);
+    const totalPrice = EURFormatter.format(priceSum);
 
     const html =
         `
