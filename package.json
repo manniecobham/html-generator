@@ -1,6 +1,6 @@
 {
   "name": "@taskmanagement/html-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Html template for the taskmanagement app",
   "main": "./dist",
   "types": "./dist",
