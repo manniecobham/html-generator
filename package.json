@@ -1,0 +1,27 @@
+{
+  "name": "@taskmanagement/html-generator",
+  "version": "0.1.0",
+  "description": "Html template for the taskmanagement app",
+  "main": "./dist",
+  "types": "./dist",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build",
+    "build": "tsc",
+    "watch": "ts-node ./src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manniecobham/html-generator.git"
+  },
+  "author": "Emmanuel Cobham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manniecobham/html-generator/issues"
+  },
+  "homepage": "https://github.com/manniecobham/html-generator#readme",
+  "dependencies": {
+    "@taskmanagement/taskapp-model": "^1.0.19",
+    "moment": "^2.29.4"
+  }
+}
