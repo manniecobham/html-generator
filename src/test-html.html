@@ -1,32 +1,4 @@
-import { ServiceProvider, Task } from "@taskmanagement/taskapp-model";
-import moment from "moment";
-
-/**
- *
- * @param data Array of Task Done
- * @param customer Object of customer
- * @returns string
- */
-export function invoiceHtmlString(data: Task[], customer: ServiceProvider) {
-    /**
-     *
-     * @param data
-     */
-    const tableData = data.map((item) => {
-        return `
-              <tr>
-                <td>${item.ticketNumber}</td>
-                <td>${item.requestedBy?.firstName} ${item.requestedBy?.lastName}</td>
-                <td>${item.percentage}</td>
-                <td>${item.price}</td>
-              </tr>
-            `;
-    });
-    const totalPrice = data.reduce((acc, item) => acc + item.price, 0)
-
-    const html =
-        `
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -175,7 +147,7 @@ export function invoiceHtmlString(data: Task[], customer: ServiceProvider) {
             <div class="total">
                 Subtotal: $85.00 <br>
                 Tax (7%): $5.95 <br>
-                Total: € ${totalPrice}
+                Total: € ${totalPrice.toFixed(2)}
             </div>
         </div>
         <div class="footer">
@@ -185,7 +157,3 @@ export function invoiceHtmlString(data: Task[], customer: ServiceProvider) {
 </body>
 
 </html>
-`;
-    return html;
-}
-
